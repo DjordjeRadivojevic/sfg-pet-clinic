@@ -36,7 +36,9 @@
             </plugin>
         </plugins>
     </build>
+
     <scm>
         <developerConnection>scm:git:https://github.com/DjordjeRadivojevic/sfg-pet-clinic.git</developerConnection>
     </scm>
+
 </project>
