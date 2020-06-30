@@ -1,18 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
     <title>List of Pet Owners</title>
 </head>
 <body>
-    <h1 th:text="'List of Owners'">Index Page</h1>
+    <h2 th:text="'List of Owners'">Index Page</h2>
 
-    <table>
+    <table class="table table-striped">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th style="width: 150px;">Id</th>
+            <th style="width: 150px;">First Name</th>
+            <th style="width: 150px;">Last Name</th>
         </tr>
         </thead>
         <tbody>
