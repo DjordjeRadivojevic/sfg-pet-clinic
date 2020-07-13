@@ -1,5 +1,11 @@
 package com.springframework.sfgpetclinic.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -9,6 +15,11 @@ import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "vet")
 public class Vet extends Person{
@@ -17,12 +28,4 @@ public class Vet extends Person{
     @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
             inverseJoinColumns = @JoinColumn(name = "speciality_id"))
     private Set<VetSpeciality> specialities = new HashSet<>();
-
-    public Set<VetSpeciality> getSpecialities() {
-        return specialities;
-    }
-
-    public void setSpecialities(Set<VetSpeciality> specialities) {
-        this.specialities = specialities;
-    }
 }
