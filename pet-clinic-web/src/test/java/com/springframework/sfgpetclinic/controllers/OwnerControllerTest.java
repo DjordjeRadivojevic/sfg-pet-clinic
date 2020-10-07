@@ -37,14 +37,12 @@ class OwnerControllerTest {
         owners = new HashSet<>();
         owners.add(Owner.builder().id(1l).build());
         owners.add(Owner.builder().id(2l).build());
-
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
 
     @Test
     void listOwners() throws Exception {
         when(ownerService.findAll()).thenReturn(owners);
-
         mockMvc.perform(get("/owners")).andExpect(status().isOk())
                 .andExpect(view().name("owners/index"))
                 .andExpect(model().attribute("owners",hasSize(2)));
